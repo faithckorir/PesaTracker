@@ -6,28 +6,34 @@ Android money journal built around M-Pesa SMS parsing (`com.fundevcrafts.pesatra
 
 Google Play needs a **public HTTPS URL** to a readable privacy policy—not raw HTML pasted into this file. GitHub’s README preview is **Markdown**; a full HTML document here will show tags as text.
 
-**Use one of these URLs in Play Console** (HTTPS, after Pages finishes building):
+**Use this URL in Play Console** when Pages publishes from **`main`** + **`/` (root)** (your current setup):
 
-| Your Pages setting | Paste this in Play Console |
-|--------------------|----------------------------|
-| **main** + **`/` (root)** — what you have now | **https://faithckorir.github.io/PesaTracker/docs/** |
-| **main** + **`/docs`** (recommended) | **https://faithckorir.github.io/PesaTracker/** |
+**https://faithckorir.github.io/PesaTracker/privacy-policy.html**
 
-With **root** publishing, only files at the repo root are at the site URL; `docs/index.html` is published under **`/docs/`**, not at `/`.
+**How to delete your data** (for Play Console “Data deletion” URL or in-app links):  
+**https://faithckorir.github.io/PesaTracker/privacy-policy.html#delete-your-data**
+
+That file lives at the **repository root** so it is always on the published site once it is committed on `main`. A 404 on **`/docs/`** usually means the `docs/` folder was never pushed to GitHub, the repo or branch name does not match the URL, or you need to wait for the Pages build to finish.
+
+| Pages folder | Play Console URL |
+|--------------|------------------|
+| **`/` (root)** | **https://faithckorir.github.io/PesaTracker/privacy-policy.html** |
+| **`/docs`** | **https://faithckorir.github.io/PesaTracker/** (needs `docs/index.html` on `main`) |
 
 ### GitHub Pages
 
-1. Repo **Settings** → **Pages**
-2. **Source**: *Deploy from a branch* → **Branch**: `main`
-3. Either keep **`/` (root)** and use the **`.../docs/`** link above, **or** set folder to **`/docs`** and Save, then use the shorter site root link.
-4. Wait for the build, open the URL in a browser, confirm the policy renders, then paste that exact URL into Play Console.
+1. Commit and push **`privacy-policy.html`**, **`.nojekyll`**, and **`main`** so GitHub has the files.
+2. Repo **Settings** → **Pages** → source **Deploy from a branch** → **`main`** + **`/`** (or **`/docs`** if you prefer).
+3. After the build (often under a minute), open the policy URL in a private window and confirm it loads, then paste that URL into Play Console.
 
 ### Files in this repo
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | **Canonical** page for Play Console (same content as `github-pages-privacy-policy.html`) |
-| `docs/github-pages-privacy-policy.html` | Copy kept for reference / tooling |
-| `docs/privacy-policy.md` | Editable Markdown source; update HTML when policy text changes |
+| **`privacy-policy.html`** (repo root) | **Use for Play** when publishing Pages from **`/`** |
+| `.nojekyll` (repo root) | Tells GitHub Pages not to run Jekyll, so static files are served reliably |
+| `docs/index.html` | Optional; use if you switch Pages to publish from **`/docs`** |
+| `docs/github-pages-privacy-policy.html` | Same policy HTML; keep in sync when you edit |
+| `docs/privacy-policy.md` | Markdown source; update the HTML copies when policy text changes |
 
 **Contact:** [fundevcrafts@gmail.com](mailto:fundevcrafts@gmail.com)
